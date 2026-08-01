@@ -1,20 +1,19 @@
-name: Build My Angular Apppp
+name: Anugular build workflow application
 
 on:
   push:
     branches: [ main ]
-
 jobs:
-  build-angular-app:
+  angular-app:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4.2.2
-      - name: Setup Node JS
-        uses: actions/setup-node@v4.2.0
-        with:
-          node-version: 22.x
-      - name: Install Dependencies
-        run: npm install
-      - name: Build Angular App
-        run: npm run build   
+      -  name: Checkouts repo
+         uses: actions/checkout@v2.8.0
+      -  name: Setup Node.js environment
+         uses: actions/setup-node@v6.5.0
+         with: 
+           node-version: 24.x
+      -  name: Install dependencies
+         run: npm install
+      -  name: Build the package
+         run: npm run build
