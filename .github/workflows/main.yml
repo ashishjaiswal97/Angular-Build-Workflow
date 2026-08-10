@@ -1,0 +1,19 @@
+name: Angular build 
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  angular-build:
+    runs-on: ubunubuntu-latest    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.1.0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.5.0
+        with: 
+          node-version: 22.x
+      - name: Install dependencies
+        run: npm install
+      - name: build package
+        run: npm run build
