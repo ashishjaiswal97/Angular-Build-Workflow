@@ -5,7 +5,7 @@ on:
 
 jobs:
   angular-build:
-    runs-on: ubunubuntu-latest    
+    runs-on: ubuntu-latest   
     steps:
       - name: Checkout
         uses: actions/checkout@v2.8.0
